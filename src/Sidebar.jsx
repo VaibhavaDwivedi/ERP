@@ -16,8 +16,11 @@ import {
 function Sidebar() {
   return (
     <>
-      <div className="w-[220px] h-[924px]  flex flex-col gap-2 bg-white">
-        <img className="w-[40%] mx-auto mt-8 mb-4" src="./devlogo.png" />
+      <div className="w-[220px] h-[924px]  flex flex-col bg-white mb-[217px]">
+        <img
+          className="w-[87px] mx-auto mt-[44px] mb-[36px]"
+          src="./devlogo.png"
+        />
         <Button>
           <FontAwesomeIcon icon={faChartLine} />
           DashBoard
@@ -43,7 +46,8 @@ function Sidebar() {
           Devices
         </Button>
         <Button>
-          <FontAwesomeIcon icon={faCalendarDays} size="lg" /> Calender
+          <FontAwesomeIcon icon={faCalendarDays} size="lg" />
+          Calender
         </Button>
         <Button>
           <FontAwesomeIcon icon={faUmbrellaBeach} />
