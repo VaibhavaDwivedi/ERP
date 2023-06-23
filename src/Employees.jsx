@@ -3,7 +3,7 @@ import { data } from "./data";
 function Employees() {
   return (
     <>
-      <div className="bg-green-500 w-[1621px] h-[65px] mt-[21px]"></div>
+      <div className="bg-green-500 w-[1621px] h-[65px]"></div>
       <div className="bg-[#F6F6F6] border-[#EBEBEB] border-[1px] w-[1621px] h-[70px] mt-[26px] flex ">
         <div className="ml-[54px] my-[23px] w-[18px] h-[25px]">ID</div>
         <div className="w-[91px] ml-[194px] my-[23px]  h-[25px]">FullName</div>
@@ -47,10 +47,10 @@ function Employees() {
                 {items.hours}
               </div>
             </div>
-            <div className=" my-[23px] ml-[150px] h-[25px] w-[73px] text-[16px] text-[#A59F9F]">
+            <div className=" my-[23px] ml-[160px] h-[25px] w-[73px] text-[16px] text-[#A59F9F]">
               {items.role}
             </div>
-            <div className="my-[23px] ml-[150px] h-[25px] w-[69px]">
+            <div className="my-[23px] ml-[160px] h-[25px] w-[69px]">
               {items.actions}
             </div>
           </div>
