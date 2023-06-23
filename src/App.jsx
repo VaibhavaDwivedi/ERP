@@ -26,7 +26,6 @@ function App() {
               <Routes>
                 <Route index element={<Dashboard />} />
                 <Route path="employee" element={<Employees />} />
-
                 <Route path="projects" element={<Projects />} />
                 <Route path="department" element={<Department />} />
                 <Route path="clients" element={<Clients />} />
@@ -35,6 +34,7 @@ function App() {
                 <Route path="leaves" element={<Leaves />} />
                 <Route path="inovices" element={<Inovices />} />
                 <Route path="reports" element={<Reports />} />
+                <Route path="*" element={<ErrorPage />} />
                 {/* <Route path="" element={}/>
                 <Route path="" element={}/>
                 <Route path="" element={}/> */}

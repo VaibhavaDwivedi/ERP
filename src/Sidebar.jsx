@@ -63,37 +63,37 @@ function Sidebar() {
             Departments
           </Button>
         </Link>
-        <Link to="clients">
+        <Link to="/clients">
           <Button>
             <FontAwesomeIcon icon={faUserSecret} size="lg" />
             Clients
           </Button>
         </Link>
-        <Link to="devices">
+        <Link to="/devices">
           <Button>
             <FontAwesomeIcon icon={faLaptop} />
             Devices
           </Button>
         </Link>
-        <Link to="calender">
+        <Link to="/calender">
           <Button>
             <FontAwesomeIcon icon={faCalendarDays} size="lg" />
             Calender
           </Button>
         </Link>
-        <Link to="leaves">
+        <Link to="/leaves">
           <Button>
             <FontAwesomeIcon icon={faUmbrellaBeach} />
             Leaves
           </Button>
         </Link>
-        <Link to="inovices">
+        <Link to="/inovices">
           <Button>
             <FontAwesomeIcon icon={faFileInvoiceDollar} size="lg" />
             Inovices
           </Button>
         </Link>
-        <Link to="reports">
+        <Link to="/reports">
           <Button>
             <FontAwesomeIcon icon={faFileLines} size="lg" />
             Reports
