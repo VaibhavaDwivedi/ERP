@@ -12,12 +12,13 @@ import Leaves from "./Leaves";
 import Inovices from "./Inovices";
 import Reports from "./Reports";
 import { Routes, Route } from "react-router-dom";
+import EmployeeDetail from "./EmployeeDetail";
 
 function App() {
   return (
     <>
       <div className="flex flex-col">
-        <div className="flex bg-[#EBEBEB] h-[924px] w-[1920px]">
+        <div className="flex h-[924px] w-[1920px] bg-[#EBEBEB]">
           <Sidebar />
           <div>
             <Navbar />
@@ -26,6 +27,7 @@ function App() {
               <Routes>
                 <Route index element={<Dashboard />} />
                 <Route path="employee" element={<Employees />} />
+                <Route path="employee/:id/" element={<EmployeeDetail />} />
                 <Route path="projects" element={<Projects />} />
                 <Route path="department" element={<Department />} />
                 <Route path="clients" element={<Clients />} />
@@ -35,11 +37,7 @@ function App() {
                 <Route path="inovices" element={<Inovices />} />
                 <Route path="reports" element={<Reports />} />
                 <Route path="*" element={<ErrorPage />} />
-                {/* <Route path="" element={}/>
-                <Route path="" element={}/>
-                <Route path="" element={}/> */}
               </Routes>
-              {/* <Employees /> */}
             </div>
           </div>
         </div>

@@ -34,9 +34,7 @@ function Sidebar() {
           className="w-[87px] mx-auto mt-[44px] mb-[36px]"
           src="./devlogo.png"
         />
-        <Outlet />
-        {/* <Link to="/dashboard"> */}
-        {/* <Link to={`employee`}> */}
+        {/* <Outlet /> */}
         <NavLink
           to="/"
           className={({ isActive }) =>

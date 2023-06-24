@@ -1,21 +1,25 @@
 import Button from "./Button";
 import { data } from "./data";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 function Employees() {
   return (
     <>
-      <div className="flex h-[65px] w-[1621px] items-end justify-between bg-transparent">
-        <div className="h-[33px] w-[136px] text-left font-poppins text-[24px] font-semibold">
+      <div className="flex h-[65px] w-[1621px] items-center justify-between bg-transparent">
+        <div className="flex h-[33px] w-[136px] text-left font-poppins text-[24px] font-semibold">
           Employee
         </div>
-        <div className="flex ">
+        <div className="mt-[15px] flex">
           <input
             placeholder="Search keyword"
-            className="mr-[20px] h-[50px] w-[501px] border-[1px] placeholder:text-justify placeholder:opacity-100 "
+            className="mr-[20px] h-[50px] w-[501px] rounded-[8px] border-[1px] placeholder:text-justify placeholder:opacity-100 "
           />
-          <input placeholder="filter" className="ml-[20px] mr-[17px]" />
+          <input
+            placeholder="filter"
+            className="ml-[20px] mr-[17px] rounded-[8px] border-[1px] border-black"
+          />
           <Button className="ml-[17px] h-[50px] w-[180px] rounded-[8px] bg-[#1A13CB] pr-[11px] text-left font-poppins text-[16px] font-semibold text-white">
             <FontAwesomeIcon icon={faPlus} className="" />
             Add Employee
@@ -69,7 +73,12 @@ function Employees() {
               {items.role}
             </div>
             <div className=" ml-[91px] mr-[45px] h-[25px] w-[69px]">
-              {items.actions}
+              <Link
+                to={"/employee/" + items.id}
+                className="hover:bg-primary-light focus:ring-primary-default text-primary-default rounded-md bg-white px-1.5 py-0.5 text-sm hover:border hover:text-white focus:ring"
+              >
+                {items.actions}
+              </Link>
             </div>
           </div>
         );
