@@ -1,5 +1,5 @@
 import Button from "./Button";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faSitemap,
@@ -37,68 +37,140 @@ function Sidebar() {
         <Outlet />
         {/* <Link to="/dashboard"> */}
         {/* <Link to={`employee`}> */}
-        <Link to="/">
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive
+              ? "bg-[#1A13CB] text-white rounded-r-[8px]"
+              : "rounded-r-[8px]"
+          }
+        >
+          {/* Added NavLink instead of Link to use property isActive which is
+          in-built in NavLink */}
           <Button>
             <FontAwesomeIcon icon={faChartLine} />
             DashBoard
           </Button>
-        </Link>
-        {/* </Link> */}
-        {/*</Link> */}
-        <Link to="/employee">
+        </NavLink>
+        {/* </NavLink> */}
+        {/*</NavLink> */}
+        <NavLink
+          to="/employee"
+          className={({ isActive }) =>
+            isActive
+              ? "bg-[#1A13CB] text-white rounded-r-[8px]"
+              : "rounded-r-[8px]"
+          }
+        >
           <Button>
             <FontAwesomeIcon icon={faUserGroup} />
             Employees
           </Button>
-        </Link>
-        <Link to="/projects">
+        </NavLink>
+        <NavLink
+          to="/projects"
+          className={({ isActive }) =>
+            isActive
+              ? "bg-[#1A13CB] text-white rounded-r-[8px]"
+              : "rounded-r-[8px]"
+          }
+        >
           <Button>
             <FontAwesomeIcon icon={faTableList} size="lg" />
             Projects
           </Button>
-        </Link>
-        <Link to="/department">
+        </NavLink>
+        <NavLink
+          to="/department"
+          className={({ isActive }) =>
+            isActive
+              ? "bg-[#1A13CB] text-white rounded-r-[8px]"
+              : "rounded-r-[8px]"
+          }
+        >
           <Button>
             <FontAwesomeIcon icon={faSitemap} />
             Departments
           </Button>
-        </Link>
-        <Link to="/clients">
+        </NavLink>
+        <NavLink
+          to="/clients"
+          className={({ isActive }) =>
+            isActive
+              ? "bg-[#1A13CB] text-white rounded-r-[8px]"
+              : "rounded-r-[8px]"
+          }
+        >
           <Button>
             <FontAwesomeIcon icon={faUserSecret} size="lg" />
             Clients
           </Button>
-        </Link>
-        <Link to="/devices">
+        </NavLink>
+        <NavLink
+          to="/devices"
+          className={({ isActive }) =>
+            isActive
+              ? "bg-[#1A13CB] text-white rounded-r-[8px]"
+              : "rounded-r-[8px]"
+          }
+        >
           <Button>
             <FontAwesomeIcon icon={faLaptop} />
             Devices
           </Button>
-        </Link>
-        <Link to="/calender">
+        </NavLink>
+        <NavLink
+          to="/calender"
+          className={({ isActive }) =>
+            isActive
+              ? "bg-[#1A13CB] text-white rounded-r-[8px]"
+              : "rounded-r-[8px]"
+          }
+        >
           <Button>
             <FontAwesomeIcon icon={faCalendarDays} size="lg" />
             Calender
           </Button>
-        </Link>
-        <Link to="/leaves">
+        </NavLink>
+        <NavLink
+          to="/leaves"
+          className={({ isActive }) =>
+            isActive
+              ? "bg-[#1A13CB] text-white rounded-r-[8px]"
+              : "rounded-r-[8px]"
+          }
+        >
           <Button>
             <FontAwesomeIcon icon={faUmbrellaBeach} />
             Leaves
           </Button>
-        </Link>
-        <Link to="/inovices">
+        </NavLink>
+        <NavLink
+          to="/inovices"
+          className={({ isActive }) =>
+            isActive
+              ? "bg-[#1A13CB] text-white rounded-r-[8px]"
+              : "rounded-r-[8px]"
+          }
+        >
           <Button>
             <FontAwesomeIcon icon={faFileInvoiceDollar} size="lg" />
             Inovices
           </Button>
-        </Link>
-        <Link to="/reports">
+        </NavLink>
+        <NavLink
+          to="/reports"
+          className={({ isActive }) =>
+            isActive
+              ? "bg-[#1A13CB] text-white rounded-r-[8px]"
+              : "rounded-r-[8px]"
+          }
+        >
           <Button>
             <FontAwesomeIcon icon={faFileLines} size="lg" />
             Reports
           </Button>
-        </Link>
+        </NavLink>
       </div>
     </>
   );
