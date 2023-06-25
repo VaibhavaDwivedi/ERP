@@ -1,10 +1,16 @@
 import Button from "./Button";
 import { data } from "./data";
-import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faPlus, faFilter, faXmark } from "@fortawesome/free-solid-svg-icons";
+import EmployeeList from "./EmployeeList";
+import { useState } from "react";
+import Filter from "./Filter";
+import { createPortal } from "react-dom";
 
 function Employees() {
+  const [showFilter, setShowFilter] = useState(false);
+  const closeFilter = () => setShowFilter(false);
+  const openFilter = () => setShowFilter(true);
   return (
     <>
       <div className="flex h-[65px] w-[1621px] items-center justify-between bg-transparent">
@@ -16,73 +22,25 @@ function Employees() {
             placeholder="Search keyword"
             className="mr-[20px] h-[50px] w-[501px] rounded-[8px] border-[1px] placeholder:text-justify placeholder:opacity-100 "
           />
-          <input
-            placeholder="filter"
-            className="ml-[20px] mr-[17px] rounded-[8px] border-[1px] border-black"
-          />
-          <Button className="ml-[17px] h-[50px] w-[180px] rounded-[8px] bg-[#1A13CB] pr-[11px] text-left font-poppins text-[16px] font-semibold text-white">
+          <Button
+            className="ml-[20px]  mr-[17px] h-[50px] w-[140px] rounded-[8px] border-[1px] border-black px-[11px] py-[12px]"
+            onClick={openFilter}
+          >
+            <FontAwesomeIcon icon={faFilter} size="xl" />
+            filter
+          </Button>
+          {showFilter &&
+            createPortal(<Filter closeFilter={closeFilter} />, document.body)}
+          {/* <Button className="mr-[17px] w-[50px] border-[1px] border-black">
+            <FontAwesomeIcon icon={faXmark} size="xs" />
+          </Button> */}
+          <Button className="ml-[17px] h-[50px] w-[180px] rounded-[8px] bg-[#1A13CB]  px-[11px] py-[14px] font-poppins text-[16px] font-semibold text-white">
             <FontAwesomeIcon icon={faPlus} className="" />
             Add Employee
           </Button>
         </div>
       </div>
-      <div className="mt-[26px] flex h-[70px] w-[1621px] items-center border-[1px] border-[#EBEBEB] bg-[#F6F6F6] text-left font-poppins text-[17px] font-semibold text-[#302F2F]">
-        <div className="ml-[54px] mr-[97px] h-[25px] w-[18px]">ID</div>
-        <div className="ml-[97px] mr-[133px] h-[25px] w-[91px]">FullName</div>
-        <div className="ml-[134px] mr-[116px] h-[25px] w-[73px] ">Projects</div>
-        <div className="ml-[117px] mr-[94px] h-[25px] w-[165px]">
-          Hours Engagement
-        </div>
-        <div className="ml-[95px] mr-[94px] h-[25px] w-[39px]">Role</div>
-        <div className="ml-[94px] mr-[41px] h-[25px] w-[69px]">Actions</div>
-      </div>
-      {data.map((items) => {
-        return (
-          <div
-            className="flex h-[70px] w-[1621px] items-center border bg-white"
-            key={items.id}
-          >
-            <div className="ml-[55px] mr-[97px] text-[16px]">{items.id}</div>
-            <div className="ml-[61px] mr-[108px] flex h-[40px] w-[164px]">
-              <div className="w-[36px] self-center">
-                <img src={items.imageUrl} alt="image" />
-              </div>
-              <div className="flex flex-col">
-                <div className="w-[118px] text-[16px]">{items.name}</div>
-                <div className="w-[112px] text-[12px]">{items.email}</div>
-              </div>
-            </div>
-            <div className=" ml-[108px] mr-[126px] flex h-[25px] w-[90px] flex-row justify-center text-[14px]">
-              {items.projects.map((item) => {
-                return (
-                  <button
-                    key={item}
-                    className="h-[30px] w-[100px] rounded-[15px] bg-[#00D100] px-[30px] py-[4px] text-white"
-                  >
-                    {item}
-                  </button>
-                );
-              })}
-            </div>
-            <div className="my-[23px] ml-[126px] mr-[102px] h-[25px] w-[165px]">
-              <button className="w-[100px] rounded-[15px] bg-[#00D100] px-[30px] py-[3px] text-center text-[14px] text-white">
-                {items.hours}
-              </button>
-            </div>
-            <div className=" ml-[102px] mr-[90px] h-[23px] w-[73px] border-[1px] border-white text-[14px] text-[#A59F9F]">
-              {items.role}
-            </div>
-            <div className=" ml-[91px] mr-[45px] h-[25px] w-[69px]">
-              <Link
-                to={"/employee/" + items.id}
-                className="hover:bg-primary-light focus:ring-primary-default text-primary-default rounded-md bg-white px-1.5 py-0.5 text-sm hover:border hover:text-white focus:ring"
-              >
-                {items.actions}
-              </Link>
-            </div>
-          </div>
-        );
-      })}
+      <EmployeeList data={data} />
     </>
   );
 }

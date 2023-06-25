@@ -27,21 +27,22 @@ const NavData = [
 ];
 
 function Sidebar() {
+  const activeClass =
+    "bg-[#1A13CB] text-white rounded-r-[8px] mr-[30px] py-[18px] pl-[29px] w-[190px] text-[14px]";
+  const inActiveClass =
+    "rounded-r-[8px] mr-[30px] py-[18px] w-[190px] text-[14px] pl-[29px]";
+
   return (
     <>
-      <div className="w-[220px] h-[924px]  flex flex-col bg-white mb-[217px]">
+      <div className="mb-[217px] flex  h-[924px] w-[220px] flex-col bg-white">
         <img
-          className="w-[87px] mx-auto mt-[44px] mb-[36px]"
+          className="mx-auto mb-[36px] mt-[44px] w-[87px]"
           src="./devlogo.png"
         />
         {/* <Outlet /> */}
         <NavLink
           to="/"
-          className={({ isActive }) =>
-            isActive
-              ? "bg-[#1A13CB] text-white rounded-r-[8px]"
-              : "rounded-r-[8px]"
-          }
+          className={({ isActive }) => (isActive ? activeClass : inActiveClass)}
         >
           {/* Added NavLink instead of Link to use property isActive which is
           in-built in NavLink */}
@@ -54,11 +55,7 @@ function Sidebar() {
         {/*</NavLink> */}
         <NavLink
           to="/employee"
-          className={({ isActive }) =>
-            isActive
-              ? "bg-[#1A13CB] text-white rounded-r-[8px]"
-              : "rounded-r-[8px]"
-          }
+          className={({ isActive }) => (isActive ? activeClass : inActiveClass)}
         >
           <Button>
             <FontAwesomeIcon icon={faUserGroup} />
@@ -67,11 +64,7 @@ function Sidebar() {
         </NavLink>
         <NavLink
           to="/projects"
-          className={({ isActive }) =>
-            isActive
-              ? "bg-[#1A13CB] text-white rounded-r-[8px]"
-              : "rounded-r-[8px]"
-          }
+          className={({ isActive }) => (isActive ? activeClass : inActiveClass)}
         >
           <Button>
             <FontAwesomeIcon icon={faTableList} size="lg" />
@@ -80,11 +73,7 @@ function Sidebar() {
         </NavLink>
         <NavLink
           to="/department"
-          className={({ isActive }) =>
-            isActive
-              ? "bg-[#1A13CB] text-white rounded-r-[8px]"
-              : "rounded-r-[8px]"
-          }
+          className={({ isActive }) => (isActive ? activeClass : inActiveClass)}
         >
           <Button>
             <FontAwesomeIcon icon={faSitemap} />
@@ -93,11 +82,7 @@ function Sidebar() {
         </NavLink>
         <NavLink
           to="/clients"
-          className={({ isActive }) =>
-            isActive
-              ? "bg-[#1A13CB] text-white rounded-r-[8px]"
-              : "rounded-r-[8px]"
-          }
+          className={({ isActive }) => (isActive ? activeClass : inActiveClass)}
         >
           <Button>
             <FontAwesomeIcon icon={faUserSecret} size="lg" />
@@ -106,11 +91,7 @@ function Sidebar() {
         </NavLink>
         <NavLink
           to="/devices"
-          className={({ isActive }) =>
-            isActive
-              ? "bg-[#1A13CB] text-white rounded-r-[8px]"
-              : "rounded-r-[8px]"
-          }
+          className={({ isActive }) => (isActive ? activeClass : inActiveClass)}
         >
           <Button>
             <FontAwesomeIcon icon={faLaptop} />
@@ -119,11 +100,7 @@ function Sidebar() {
         </NavLink>
         <NavLink
           to="/calender"
-          className={({ isActive }) =>
-            isActive
-              ? "bg-[#1A13CB] text-white rounded-r-[8px]"
-              : "rounded-r-[8px]"
-          }
+          className={({ isActive }) => (isActive ? activeClass : inActiveClass)}
         >
           <Button>
             <FontAwesomeIcon icon={faCalendarDays} size="lg" />
@@ -132,11 +109,7 @@ function Sidebar() {
         </NavLink>
         <NavLink
           to="/leaves"
-          className={({ isActive }) =>
-            isActive
-              ? "bg-[#1A13CB] text-white rounded-r-[8px]"
-              : "rounded-r-[8px]"
-          }
+          className={({ isActive }) => (isActive ? activeClass : inActiveClass)}
         >
           <Button>
             <FontAwesomeIcon icon={faUmbrellaBeach} />
@@ -145,11 +118,7 @@ function Sidebar() {
         </NavLink>
         <NavLink
           to="/inovices"
-          className={({ isActive }) =>
-            isActive
-              ? "bg-[#1A13CB] text-white rounded-r-[8px]"
-              : "rounded-r-[8px]"
-          }
+          className={({ isActive }) => (isActive ? activeClass : inActiveClass)}
         >
           <Button>
             <FontAwesomeIcon icon={faFileInvoiceDollar} size="lg" />
@@ -158,11 +127,7 @@ function Sidebar() {
         </NavLink>
         <NavLink
           to="/reports"
-          className={({ isActive }) =>
-            isActive
-              ? "bg-[#1A13CB] text-white rounded-r-[8px]"
-              : "rounded-r-[8px]"
-          }
+          className={({ isActive }) => (isActive ? activeClass : inActiveClass)}
         >
           <Button>
             <FontAwesomeIcon icon={faFileLines} size="lg" />
