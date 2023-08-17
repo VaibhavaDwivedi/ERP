@@ -27,10 +27,9 @@ const NavData = [
 ];
 
 function Sidebar() {
-  const activeClass =
-    "bg-[#1A13CB] text-white rounded-r-[8px] mr-[30px] py-[18px] pl-[29px] w-[190px] text-[14px]";
-  const inActiveClass =
-    "rounded-r-[8px] mr-[30px] py-[18px] w-[190px] text-[14px] pl-[29px]";
+  const className =
+    "flex gap-[10px] font-poppins font-semibold leading-[21px] rounded-r-[8px] mr-[30px] py-[18px] pl-[29px] w-[190px] text-[14px]";
+  const activeClass = "bg-[#1A13CB] text-white " + className;
 
   return (
     <>
@@ -42,97 +41,78 @@ function Sidebar() {
         {/* <Outlet /> */}
         <NavLink
           to="/"
-          className={({ isActive }) => (isActive ? activeClass : inActiveClass)}
+          className={({ isActive }) => (isActive ? activeClass : className)}
         >
           {/* Added NavLink instead of Link to use property isActive which is
           in-built in NavLink */}
-          <Button>
-            <FontAwesomeIcon icon={faChartLine} />
-            DashBoard
-          </Button>
+          <FontAwesomeIcon icon={faChartLine} />
+          DashBoard
         </NavLink>
         {/* </NavLink> */}
         {/*</NavLink> */}
+
         <NavLink
           to="/employee"
-          className={({ isActive }) => (isActive ? activeClass : inActiveClass)}
+          className={({ isActive }) => (isActive ? activeClass : className)}
         >
-          <Button>
-            <FontAwesomeIcon icon={faUserGroup} />
-            Employees
-          </Button>
+          <FontAwesomeIcon icon={faUserGroup} />
+          Employees
         </NavLink>
         <NavLink
           to="/projects"
-          className={({ isActive }) => (isActive ? activeClass : inActiveClass)}
+          className={({ isActive }) => (isActive ? activeClass : className)}
         >
-          <Button>
-            <FontAwesomeIcon icon={faTableList} size="lg" />
-            Projects
-          </Button>
+          <FontAwesomeIcon icon={faTableList} size="lg" />
+          Projects
         </NavLink>
         <NavLink
           to="/department"
-          className={({ isActive }) => (isActive ? activeClass : inActiveClass)}
+          className={({ isActive }) => (isActive ? activeClass : className)}
         >
-          <Button>
-            <FontAwesomeIcon icon={faSitemap} />
-            Departments
-          </Button>
+          <FontAwesomeIcon icon={faSitemap} />
+          Departments
         </NavLink>
         <NavLink
           to="/clients"
-          className={({ isActive }) => (isActive ? activeClass : inActiveClass)}
+          className={({ isActive }) => (isActive ? activeClass : className)}
         >
-          <Button>
-            <FontAwesomeIcon icon={faUserSecret} size="lg" />
-            Clients
-          </Button>
+          <FontAwesomeIcon icon={faUserSecret} size="lg" />
+          Clients
         </NavLink>
         <NavLink
           to="/devices"
-          className={({ isActive }) => (isActive ? activeClass : inActiveClass)}
+          className={({ isActive }) => (isActive ? activeClass : className)}
         >
-          <Button>
-            <FontAwesomeIcon icon={faLaptop} />
-            Devices
-          </Button>
+          <FontAwesomeIcon icon={faLaptop} />
+          Devices
         </NavLink>
         <NavLink
           to="/calender"
-          className={({ isActive }) => (isActive ? activeClass : inActiveClass)}
+          className={({ isActive }) => (isActive ? activeClass : className)}
         >
-          <Button>
-            <FontAwesomeIcon icon={faCalendarDays} size="lg" />
-            Calender
-          </Button>
+          <FontAwesomeIcon icon={faCalendarDays} size="lg" />
+          Calender
         </NavLink>
         <NavLink
           to="/leaves"
-          className={({ isActive }) => (isActive ? activeClass : inActiveClass)}
+          className={({ isActive }) => (isActive ? activeClass : className)}
         >
-          <Button>
-            <FontAwesomeIcon icon={faUmbrellaBeach} />
-            Leaves
-          </Button>
+          <FontAwesomeIcon icon={faUmbrellaBeach} />
+          Leaves
         </NavLink>
         <NavLink
           to="/inovices"
-          className={({ isActive }) => (isActive ? activeClass : inActiveClass)}
+          className={({ isActive }) => (isActive ? activeClass : className)}
         >
-          <Button>
-            <FontAwesomeIcon icon={faFileInvoiceDollar} size="lg" />
-            Inovices
-          </Button>
+          <FontAwesomeIcon icon={faFileInvoiceDollar} size="lg" />
+          Inovices
         </NavLink>
         <NavLink
           to="/reports"
-          className={({ isActive }) => (isActive ? activeClass : inActiveClass)}
+          className={({ isActive }) => (isActive ? activeClass : className)}
         >
-          <Button>
-            <FontAwesomeIcon icon={faFileLines} size="lg" />
-            Reports
-          </Button>
+          <FontAwesomeIcon icon={faFileLines} size="lg" />
+          Reports
         </NavLink>
       </div>
     </>

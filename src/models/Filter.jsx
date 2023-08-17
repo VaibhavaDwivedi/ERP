@@ -1,4 +1,4 @@
-import Button from "./Button";
+import Button from "../Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFilter, faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 
@@ -22,6 +22,7 @@ function Filter({ closeFilter }) {
             </div>
             <div className="ml-[188px]">
               <FontAwesomeIcon
+                className="cursor-pointer"
                 onClick={closeFilter}
                 icon={faCircleXmark}
                 size="xl"
@@ -35,9 +36,9 @@ function Filter({ closeFilter }) {
             <option className="text-[#BBBABA]" hidden>
               Select Project
             </option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
           </select>
           <div className="mr-[466px] mt-[19px] font-poppins text-[16px] font-medium text-[#4B5563]">
             Role
@@ -46,9 +47,9 @@ function Filter({ closeFilter }) {
             <option className="text-[#BBBABA]" hidden>
               Select Role
             </option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
           </select>
           <div className="mr-[402px] mt-[19px] font-poppins text-[16px] font-medium text-[#4B5563]">
             Department
@@ -57,9 +58,9 @@ function Filter({ closeFilter }) {
             <option className="text-[#BBBABA]" hidden>
               Select Department
             </option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
           </select>
           <div className="mr-[413px] mt-[19px] font-poppins text-[16px] font-medium text-[#4B5563]">
             Bandwidth
@@ -68,9 +69,9 @@ function Filter({ closeFilter }) {
             <option className="text-[#BBBABA]" hidden>
               Select Bandwidth
             </option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
           </select>
           <div className="mt-[19px] flex justify-end font-poppins text-[20px]">
             <Button
